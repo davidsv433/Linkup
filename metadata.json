@@ -1,6 +1,6 @@
 {
-  "name": "Gather",
-  "description": "Gather with friends around premium local spots. Plan meetups, coordinate group shared calendars in seconds, share beautiful photo albums, and vote on activities.",
+  "name": "Linkup",
+  "description": "Linkup with friends around premium local spots. Plan meetups, coordinate group shared calendars in seconds, share beautiful photo albums, and vote on activities.",
   "requestFramePermissions": [
     "geolocation"
   ],
