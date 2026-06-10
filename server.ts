@@ -50,7 +50,7 @@ app.post("/api/recommendations", async (req, res) => {
     const availableTime = refinementOptions?.availableTime || "Any Time";
 
     const prompt = `
-You are Gather's custom AI Social Coordinator. Your job is to suggest custom-tailored meetup ideas and matching places based on social context.
+You are Linkup's custom AI Social Coordinator. Your job is to suggest custom-tailored meetup ideas and matching places based on social context.
 
 CONTEXT DEFAULTS:
 1. Current User: "${currentUser?.displayName || 'Social Pioneer'}", Bio: "${currentUser?.bio || ''}"
@@ -74,7 +74,7 @@ For each option, explain the alignment with the current user's profile, past han
       model: "gemini-3.5-flash",
       contents: prompt,
       config: {
-        systemInstruction: "You are Gather's visual AI recommendation engine. Respond in strict JSON matching the requested schema. Ensure all fields are filled, reasoning is personalized, and formatting is elegant and human-friendly.",
+        systemInstruction: "You are Linkup's visual AI recommendation engine. Respond in strict JSON matching the requested schema. Ensure all fields are filled, reasoning is personalized, and formatting is elegant and human-friendly.",
         responseMimeType: "application/json",
         responseSchema: {
           type: Type.ARRAY,
@@ -153,8 +153,8 @@ app.post("/api/calendar/add", async (req, res) => {
 
     const eventPayload = {
       summary: title,
-      description: `${description || "Hangout scheduled via Gather Applet"}\n\nSynced with Gather.`,
-      location: location || "Gather Spot",
+      description: `${description || "Hangout scheduled via Linkup Applet"}\n\nSynced with Linkup.`,
+      location: location || "Linkup Spot",
       start: {
         dateTime: startObj.toISOString(),
         timeZone: "UTC"
@@ -217,7 +217,7 @@ async function startServer() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Gather local server active at http://localhost:${PORT}`);
+    console.log(`Linkup local server active at http://localhost:${PORT}`);
   });
 }
 
